@@ -1,5 +1,13 @@
 <template>
-  <div class="container">
-    <p>Hello World</p>
+  <div class="master">
+    <DesktopHeader />
+    <HomeHero />
+    <HomeProjects />
+    <HomeCEO />
+    <HomeStaff />
+    <HomeVacancies />
+    <HomeReviews />
+    <HomePartners />
+    <DesktopFooter />
   </div>
 </template>

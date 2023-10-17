@@ -31,4 +31,6 @@ export default {
   },
 
   build: {},
+
+  ssr: false,
 };
