@@ -398,4 +398,42 @@ video {
   border: 0;
   background: transparent;
 }
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding-bottom: 80px;
+  }
+  .title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    margin-bottom: 24px;
+  }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .left {
+    max-height: 488px;
+  }
+  .right {
+    padding: 16px 0 0 0;
+  }
+  .cardo {
+    padding: 24px;
+  }
+  .comment p {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    margin-bottom: 24px;
+  }
+  .full {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+  }
+}
 </style>

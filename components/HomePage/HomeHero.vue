@@ -111,4 +111,60 @@ export default {};
   align-items: flex-end;
   padding: 0;
 }
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding: 140px 0 40px 0;
+  }
+  .title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 120%;
+    margin-bottom: 24px;
+  }
+  .tags {
+    gap: 16px;
+    flex-wrap: wrap;
+    max-width: 80%;
+  }
+  .tag {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+  .right {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 16px;
+    margin-top: 80px;
+  }
+  .first {
+    margin: 0;
+  }
+  .cardo {
+    min-height: 114px;
+    max-width: none;
+    width: 100%;
+    padding: 16px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .num {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    margin: 0;
+  }
+  .sub {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+  }
+}
 </style>

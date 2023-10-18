@@ -103,4 +103,40 @@ export default {};
   font-weight: 400;
   line-height: 150%; /* 24px */
 }
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    margin-bottom: 32px;
+  }
+  .wrap {
+    padding: 80px 0;
+  }
+  .items {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .pic {
+    width: 100%;
+    height: 164px;
+  }
+  .item {
+    gap: 16px;
+  }
+  .name {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    margin-bottom: 8px;
+  }
+  .status {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+}
 </style>

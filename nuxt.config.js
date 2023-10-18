@@ -21,7 +21,7 @@ export default {
   modules: ["bootstrap-vue/nuxt", "@nuxtjs/axios", "@nuxtjs/pwa"],
 
   axios: {
-    baseURL: "/",
+    baseURL: "https://mazmoonweb.pythonanywhere.com/api",
   },
 
   pwa: {

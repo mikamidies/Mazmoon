@@ -151,6 +151,9 @@ export default {
     new Swiper(this.$refs.swiper_1, {
       slidesPerView: 1,
       effect: "fade",
+      autoplay: {
+        delay: 1000,
+      },
     });
     new Swiper(this.$refs.swiper_2, {
       slidesPerView: 1,
@@ -242,5 +245,32 @@ export default {
   font-style: normal;
   font-weight: 400;
   line-height: 140%; /* 19.6px */
+}
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding-bottom: 80px;
+  }
+  .title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    margin-bottom: 32px;
+  }
+  .items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .swiper {
+    height: 108px;
+  }
+  .num {
+    top: 12px;
+    left: 0;
+  }
+  .pic {
+    width: 80%;
+    height: 50%;
+    object-fit: contain;
+  }
 }
 </style>

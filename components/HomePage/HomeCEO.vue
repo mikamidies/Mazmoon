@@ -136,4 +136,50 @@ export default {};
   font-weight: 400;
   line-height: 150%; /* 24px */
 }
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    margin-bottom: 32px;
+  }
+  .txt {
+    max-width: 90%;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 19.6px */
+  }
+  .num {
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    margin: 0 0 16px 0;
+    margin-bottom: 16px;
+  }
+  .items {
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .sub {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 19.6px */
+  }
+  .left {
+    margin-bottom: 24px;
+  }
+  .pic {
+    height: 394px;
+    border-radius: 24px;
+  }
+  .tag {
+    bottom: 16px;
+    left: 16px;
+    padding: 8px 16px;
+  }
+}
 </style>

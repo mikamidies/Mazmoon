@@ -84,4 +84,29 @@ export default {};
   left: 40px;
   z-index: 2;
 }
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding-bottom: 80px;
+  }
+  .title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    padding-top: 40px;
+    margin-bottom: 32px;
+  }
+  .items {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .item:nth-child(3n) {
+    grid-column: initial;
+  }
+  .item {
+    border-radius: 24px;
+  }
+  .pic {
+    height: 280px;
+  }
+}
 </style>

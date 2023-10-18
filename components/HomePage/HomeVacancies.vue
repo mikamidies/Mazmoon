@@ -76,4 +76,36 @@ export default {};
   font-weight: 500;
   line-height: 140%; /* 33.6px */
 }
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    margin-bottom: 32px;
+    max-width: 70%;
+  }
+  .items {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .item {
+    min-height: 0;
+    height: 106px;
+    padding: 16px;
+    border-radius: 16px;
+  }
+  .name {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+  .skill {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+  }
+}
 </style>
