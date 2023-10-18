@@ -42,7 +42,7 @@ export default {};
 
 <style scoped>
 .wrap {
-  padding: 120px 0;
+  padding: 240px 0 120px 0;
 }
 .title {
   color: var(--grey-24, #c2c2c3);

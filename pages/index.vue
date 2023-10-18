@@ -8,6 +8,7 @@
     <HomeVacancies />
     <HomeReviews />
     <HomePartners />
+    <!-- <HomePartnersVariant /> -->
     <DesktopFooter />
   </div>
 </template>
