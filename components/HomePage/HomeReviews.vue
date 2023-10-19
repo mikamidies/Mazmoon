@@ -44,10 +44,10 @@
       </div>
       <div class="swiper" ref="swiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
+          <div v-for="item in reviews" :key="item.id" class="swiper-slide">
             <div class="row">
               <div class="col-lg-3 col-xs-12 left">
-                <button id="play" class="play">
+                <button @click="playVideo(item.id)" class="play">
                   <span class="logo">
                     <svg
                       class="play_logo"
@@ -80,103 +80,29 @@
                   </span>
                   Videoni ko’rish
                 </button>
-                <video id="video" src="/video.mp4"></video>
+                <video
+                  class="video"
+                  :ref="`video${item.id}`"
+                  :src="item.video"
+                ></video>
                 <div class="content">
-                  <p class="name">Maftunaxon Xabibullayeva</p>
-                  <p class="status">CEO-Safar-park</p>
+                  <p class="name">{{ item.name }}</p>
+                  <p class="status">{{ item.subtitle }}</p>
                 </div>
               </div>
               <div class="col-lg-9 col-xs-12 right">
                 <div class="cardo">
                   <div class="person">
                     <div class="img">
-                      <img src="@/assets/img/karina.jpg" alt="" class="pic" />
+                      <img :src="item.image" alt="" class="pic" />
                     </div>
                     <div>
-                      <h4>Maftunaxon Xabibullayeva</h4>
-                      <p>CEO Safar-park</p>
+                      <h4>{{ item.name }}</h4>
+                      <p>{{ item.subtitle }}</p>
                     </div>
                   </div>
                   <div class="comment">
-                    <p>
-                      Bozorimiz ishga tushganidan beri biz yigitlar bilan 2
-                      yildan beri ishlaymiz. Mazmoon yigitlari, yaxshi dizayndan
-                      tashqari, ishlab chiqilgan mahsulot yondashuvi va
-                      tadqiqotlariga ega. Bu MVP bosqichida va UX gipotezalarini
-                      sinab ko'rishda bizga ko'p yordam berdi. Bundan tashqari,
-                      bu bizga ushbu funktsiyani qisman autsorsing qilish
-                      imkonini berdi va vaqtimizni...
-                    </p>
-
-                    <button class="full">Читать Полный отзыв</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="row">
-              <div class="col-lg-3 col-xs-12 left">
-                <button id="play" class="play">
-                  <span class="logo">
-                    <svg
-                      class="play_logo"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="12"
-                      height="14"
-                      viewBox="0 0 12 14"
-                      fill="none"
-                    >
-                      <path
-                        d="M8.62782 8.73632L2.99228 11.9566C1.65896 12.7185 0 11.7558 0 10.2201V6.99984V3.77953C0 2.24389 1.65896 1.28115 2.99228 2.04304L8.62782 5.26335C9.97145 6.03114 9.97145 7.96853 8.62782 8.73632Z"
-                        fill="#1878F3"
-                      />
-                    </svg>
-                    <svg
-                      class="pause_logo"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="14"
-                      viewBox="0 0 16 14"
-                      fill="none"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M2 0C0.895431 0 0 0.89543 0 2V12C0 13.1046 0.89543 14 2 14H4C5.10457 14 6 13.1046 6 12V2C6 0.895431 5.10457 0 4 0H2ZM12 0C10.8954 0 10 0.89543 10 2V12C10 13.1046 10.8954 14 12 14H14C15.1046 14 16 13.1046 16 12V2C16 0.895431 15.1046 0 14 0H12Z"
-                        fill="#1878F3"
-                      />
-                    </svg>
-                  </span>
-                  Videoni ko’rish
-                </button>
-                <video id="video" src="/video.mp4"></video>
-                <div class="content">
-                  <p class="name">Maftunaxon Xabibullayeva</p>
-                  <p class="status">CEO-Safar-park</p>
-                </div>
-              </div>
-              <div class="col-lg-9 col-xs-12 right">
-                <div class="cardo">
-                  <div class="person">
-                    <div class="img">
-                      <img src="@/assets/img/karina.jpg" alt="" class="pic" />
-                    </div>
-                    <div>
-                      <h4>Maftunaxon Xabibullayeva</h4>
-                      <p>CEO Safar-park</p>
-                    </div>
-                  </div>
-                  <div class="comment">
-                    <p>
-                      Bozorimiz ishga tushganidan beri biz yigitlar bilan 2
-                      yildan beri ishlaymiz. Mazmoon yigitlari, yaxshi dizayndan
-                      tashqari, ishlab chiqilgan mahsulot yondashuvi va
-                      tadqiqotlariga ega. Bu MVP bosqichida va UX gipotezalarini
-                      sinab ko'rishda bizga ko'p yordam berdi. Bundan tashqari,
-                      bu bizga ushbu funktsiyani qisman autsorsing qilish
-                      imkonini berdi va vaqtimizni...
-                    </p>
+                    <div v-html="item.text"></div>
 
                     <button class="full">Читать Полный отзыв</button>
                   </div>
@@ -195,26 +121,42 @@ import Swiper from "swiper";
 import "swiper/swiper-bundle.min.css";
 
 export default {
-  mounted() {
-    const swiper = new Swiper(this.$refs.swiper, {
-      slidesPerView: 1,
-    });
+  props: ["reviews"],
 
-    let playButton = document.getElementById("play");
-    let video = document.getElementById("video");
-    let playLogo = document.querySelector(".play_logo");
-    let pauseLogo = document.querySelector(".pause_logo");
-    playButton.addEventListener("click", function () {
+  methods: {
+    playVideo(id) {
+      let video = this.$refs[`video${id}`][0];
+
       if (video.paused == true) {
         video.play();
-        playLogo.style.display = "none";
-        pauseLogo.style.display = "block";
       } else {
         video.pause();
-        playLogo.style.display = "block";
-        pauseLogo.style.display = "none";
       }
+    },
+  },
+
+  mounted() {
+    new Swiper(this.$refs.swiper, {
+      slidesPerView: 1,
+      spaceBetween: 24,
     });
+
+    // let playButtons = document.querySelectorAll(".play");
+    // let videos = document.querySelectorAll(".video");
+    // // let playLogo = document.querySelector(".play_logo");
+    // // let pauseLogo = document.querySelector(".pause_logo");
+
+    // playButtons.forEach((playButton) => {
+    //   playButton.addEventListener("click", function () {
+    //     videos.forEach((video) => {
+    //       if (video.paused == true) {
+    //         video.play();
+    //       } else {
+    //         video.pause();
+    //       }
+    //     });
+    //   });
+    // });
   },
 };
 </script>
@@ -287,6 +229,7 @@ export default {
     rgba(41, 41, 41, 0) 0%,
     rgba(41, 41, 41, 0.4) 100%
   );
+  pointer-events: none;
 }
 video {
   width: 100%;
@@ -374,7 +317,7 @@ video {
   font-weight: 500;
   line-height: 150%; /* 24px */
 }
-.comment p {
+.comment::v-deep p {
   color: var(--Black, #292929);
   font-family: var(--medium);
   font-size: 32px;
@@ -382,6 +325,11 @@ video {
   font-weight: 500;
   line-height: 120%; /* 38.4px */
   margin-bottom: 40px;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .right {
   padding: 0 0 0 16px;

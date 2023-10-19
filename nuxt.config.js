@@ -30,7 +30,20 @@ export default {
     },
   },
 
-  build: {},
+  build: {
+    babel: {
+      compact: true,
+    },
+    vendor: ["aos"],
+    standalone: true,
+    extend(config, ctx) {
+      config.externals = [
+        {
+          encoding: "encoding",
+        },
+      ];
+    },
+  },
 
-  ssr: false,
+  // ssr: false,
 };

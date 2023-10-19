@@ -3,40 +3,13 @@
     <div class="container">
       <h4 class="title"><span>Qobilyatli jaydari</span> ishchilarimiz</h4>
       <div class="items">
-        <div class="item">
+        <div class="item" v-for="item in staff" :key="item.id">
           <div class="img">
-            <img src="@/assets/img/jamshid.png" alt="" class="pic" />
+            <img :src="item.image" alt="" class="pic" />
           </div>
           <div class="content">
-            <p class="name">Jamshid</p>
-            <p class="status">Loyiha menedjeri</p>
-          </div>
-        </div>
-        <div class="item">
-          <div class="img">
-            <img src="@/assets/img/baxtjon.png" alt="" class="pic" />
-          </div>
-          <div class="content">
-            <p class="name">Baxtjon</p>
-            <p class="status">Maxsulot dizayneri</p>
-          </div>
-        </div>
-        <div class="item">
-          <div class="img">
-            <img src="@/assets/img/abdulloh.png" alt="" class="pic" />
-          </div>
-          <div class="content">
-            <p class="name">Abdulloh</p>
-            <p class="status">UX/UI dizayner</p>
-          </div>
-        </div>
-        <div class="item">
-          <div class="img">
-            <img src="@/assets/img/shamsiddin.png" alt="" class="pic" />
-          </div>
-          <div class="content">
-            <p class="name">Shamsiddin</p>
-            <p class="status">UX/UI dizayner</p>
+            <p class="name">{{ item.title }}</p>
+            <p class="status">{{ item.subtitle }}</p>
           </div>
         </div>
       </div>
@@ -45,7 +18,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["staff"],
+};
 </script>
 
 <style scoped>

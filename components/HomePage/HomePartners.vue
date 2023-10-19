@@ -268,8 +268,8 @@ export default {
     left: 0;
   }
   .pic {
-    width: 80%;
-    height: 50%;
+    width: 70%;
+    height: 40%;
     object-fit: contain;
   }
 }

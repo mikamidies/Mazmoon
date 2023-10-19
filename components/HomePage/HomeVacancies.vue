@@ -3,22 +3,9 @@
     <div class="container">
       <h4 class="title"><span> Bizga qobilyatli </span> ishchilar kerak</h4>
       <div class="items">
-        <div class="item">
-          <p class="name">Art direktor</p>
-          <p class="skill">Senior</p>
-        </div>
-        <div class="item">
-          <p class="name">Web dizayner</p>
-          <p class="skill">Amaliyot</p>
-        </div>
-
-        <div class="item">
-          <p class="name">Illustration</p>
-          <p class="skill">Junior</p>
-        </div>
-        <div class="item">
-          <p class="name">Art direktor</p>
-          <p class="skill">Midlle</p>
+        <div class="item" v-for="item in vacansies" :key="item.id">
+          <p class="name">{{ item.title }}</p>
+          <p class="skill">{{ item.subtitle }}</p>
         </div>
       </div>
     </div>
@@ -26,7 +13,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["vacansies"],
+};
 </script>
 
 <style scoped>

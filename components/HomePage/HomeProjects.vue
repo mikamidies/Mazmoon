@@ -3,23 +3,13 @@
     <div class="container">
       <h4 class="title">Loyihalarimiz</h4>
       <div class="items">
-        <div class="item">
-          <img src="@/assets/img/project-1.jpg" alt="" class="pic" />
-          <p class="name">
-            Cavsar tour - turistik agentligi uchun chizilgan web sayt
-          </p>
-        </div>
-        <div class="item">
-          <img src="@/assets/img/project-2.jpg" alt="" class="pic" />
-          <p class="name">
-            Cavsar tour - turistik agentligi uchun chizilgan web sayt
-          </p>
-        </div>
-        <div class="item">
-          <img src="@/assets/img/project-3.jpg" alt="" class="pic" />
-          <p class="name">
-            Cavsar tour - turistik agentligi uchun chizilgan web sayt
-          </p>
+        <div class="item" v-for="item in projects" :key="item.id">
+          <a target="_blank" :href="item.url">
+            <img :src="item.image" alt="" class="pic" />
+            <p class="name">
+              {{ item.title }}
+            </p>
+          </a>
         </div>
       </div>
     </div>
@@ -27,7 +17,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["projects"],
+
+  mounted() {},
+};
 </script>
 
 <style scoped>
@@ -55,7 +49,11 @@ export default {};
   overflow: hidden;
   position: relative;
 }
+.item a {
+  display: flex;
+}
 .item::after {
+  pointer-events: none;
   content: "";
   position: absolute;
   top: 0;

@@ -227,6 +227,18 @@ export default {
       modalHandle: false,
     };
   },
+
+  watch: {
+    modalHandle(val) {
+      if (val) {
+        document.body.style.overflow = "hidden";
+        document.body.style.height = "100vh";
+      } else {
+        document.body.style.overflow = "auto";
+        document.body.style.height = "auto";
+      }
+    },
+  },
 };
 </script>
 
@@ -331,13 +343,14 @@ export default {
   top: 0;
   padding: 120px 0;
   height: 100vh;
-  overflow: scroll;
+  overflow: auto;
   width: 100%;
 }
 .x {
   position: absolute;
   top: 40px;
   right: 20%;
+  cursor: pointer;
 }
 .tite {
   color: var(--Black, #292929);

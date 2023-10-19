@@ -35,7 +35,7 @@
           <img src="@/assets/img/akmal.jpg" alt="" class="pic" />
           <img src="@/assets/img/logo/white.svg" alt="" class="brand" />
           <div class="tag">
-            <p class="name">Sadulla</p>
+            <p class="name">Akmal</p>
             <p class="status">Art Director</p>
           </div>
         </div>
