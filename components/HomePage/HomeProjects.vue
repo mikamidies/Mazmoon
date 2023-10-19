@@ -3,7 +3,13 @@
     <div class="container">
       <h4 class="title">Loyihalarimiz</h4>
       <div class="items">
-        <div class="item" v-for="item in projects" :key="item.id">
+        <div
+          data-aos="fade-up"
+          :data-aos-duration="`${item.id * 100}`"
+          class="item"
+          v-for="item in projects"
+          :key="item.id"
+        >
           <a target="_blank" :href="item.url">
             <img :src="item.image" alt="" class="pic" />
             <p class="name">

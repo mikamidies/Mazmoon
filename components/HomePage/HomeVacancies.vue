@@ -3,7 +3,13 @@
     <div class="container">
       <h4 class="title"><span> Bizga qobilyatli </span> ishchilar kerak</h4>
       <div class="items">
-        <div class="item" v-for="item in vacansies" :key="item.id">
+        <div
+          class="item"
+          data-aos="fade-up"
+          :data-aos-duration="`${item.id * 200}`"
+          v-for="item in vacansies"
+          :key="item.id"
+        >
           <p class="name">{{ item.title }}</p>
           <p class="skill">{{ item.subtitle }}</p>
         </div>

@@ -156,6 +156,9 @@ table {
   max-width: 880px;
   margin: 0 auto;
 }
+/* .swiper-slide-active {
+  z-index: 99 !important;
+} */
 @media screen and (max-width: 1024px) {
   .container {
     padding: 0 16px;

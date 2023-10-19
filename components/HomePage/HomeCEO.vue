@@ -19,19 +19,35 @@
           </p>
           <div class="items">
             <div class="item">
-              <p class="num">2021</p>
+              <div class="flexer">
+                <ICountUp
+                  class="num"
+                  :delay="delay"
+                  :endVal="endVal"
+                  :options="options"
+                />
+              </div>
+
               <p class="sub">
                 yildan beri biz Markaziy Osiyo va MDH davlatlarida faol
                 ishlaymiz
               </p>
             </div>
             <div class="item">
-              <p class="num">270+</p>
+              <div class="flexer">
+                <ICountUp
+                  class="num"
+                  :delay="delay"
+                  :endVal="endVal2"
+                  :options="options"
+                />
+                <span>+</span>
+              </div>
               <p class="sub">loyihalarni muvaffaqiyat orqali tugatkanmiz</p>
             </div>
           </div>
         </div>
-        <div class="col-lg-5 col-xs-12 right">
+        <div data-aos="fade-left" class="col-lg-5 col-xs-12 right">
           <img src="@/assets/img/akmal.jpg" alt="" class="pic" />
           <img src="@/assets/img/logo/white.svg" alt="" class="brand" />
           <div class="tag">
@@ -45,10 +61,34 @@
 </template>
 
 <script>
-export default {};
+import ICountUp from "vue-countup-v2";
+
+export default {
+  components: {
+    ICountUp,
+  },
+
+  data() {
+    return {
+      delay: 1000,
+      endVal: 2021,
+      endVal2: 270,
+      options: {
+        useEasing: true,
+        enableScrollSpy: true,
+        scrollSpyDelay: 100,
+        scrollSpyOnce: true,
+        separator: "",
+      },
+    };
+  },
+};
 </script>
 
 <style scoped>
+.wrap {
+  overflow: hidden;
+}
 .title {
   margin-bottom: 24px;
   color: var(--Black, #c2c2c3);
@@ -74,14 +114,18 @@ export default {};
   align-items: center;
   gap: 40px;
 }
-.num {
+.flexer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.num,
+.flexer span {
   font-family: var(--bold);
-  margin-top: 12px;
   font-size: 48px;
   font-style: normal;
   font-weight: 700;
   line-height: 120%; /* 57.6px */
-  margin-bottom: 16px;
   background: linear-gradient(105deg, #3c4bdc -9.99%, #7b7dff 109.77%);
   background-clip: text;
   -webkit-background-clip: text;

@@ -12,13 +12,18 @@ export default {
 
   css: ["@/assets/css/main.css"],
 
-  plugins: [],
+  plugins: ["@/plugins/aos.client.js"],
 
   components: true,
 
   buildModules: [],
 
-  modules: ["bootstrap-vue/nuxt", "@nuxtjs/axios", "@nuxtjs/pwa"],
+  modules: [
+    "bootstrap-vue/nuxt",
+    "@nuxtjs/axios",
+    "@nuxtjs/pwa",
+    "vue-toastification/nuxt",
+  ],
 
   axios: {
     baseURL: "https://mazmoonweb.pythonanywhere.com/api",

@@ -3,7 +3,13 @@
     <div class="container">
       <h4 class="title"><span>Qobilyatli jaydari</span> ishchilarimiz</h4>
       <div class="items">
-        <div class="item" v-for="item in staff" :key="item.id">
+        <div
+          data-aos="fade-right"
+          :data-aos-duration="`${item.id * 300}`"
+          class="item"
+          v-for="item in staff"
+          :key="item.id"
+        >
           <div class="img">
             <img :src="item.image" alt="" class="pic" />
           </div>
@@ -26,6 +32,7 @@ export default {
 <style scoped>
 .wrap {
   padding: 120px 0;
+  overflow: hidden;
 }
 .title {
   color: var(--grey-24, #c2c2c3);

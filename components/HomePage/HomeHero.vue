@@ -22,12 +22,22 @@
         </div>
         <div class="col-lg-2 col-xs-12 right">
           <div class="cardo first">
-            <p class="num">400</p>
+            <ICountUp
+              class="num"
+              :delay="delay"
+              :endVal="endVal"
+              :options="options"
+            />
             <p class="sub">Web sayt loyihalarimiz</p>
           </div>
 
           <div class="cardo">
-            <p class="num">67</p>
+            <ICountUp
+              class="num"
+              :delay="delay"
+              :endVal="endVal2"
+              :options="options"
+            />
             <p class="sub">Mobile ilova loyihalarimiz</p>
           </div>
         </div>
@@ -37,7 +47,27 @@
 </template>
 
 <script>
-export default {};
+import ICountUp from "vue-countup-v2";
+
+export default {
+  components: {
+    ICountUp,
+  },
+
+  data() {
+    return {
+      delay: 1000,
+      endVal: 400,
+      endVal2: 67,
+      options: {
+        useEasing: true,
+        enableScrollSpy: true,
+        scrollSpyDelay: 100,
+        scrollSpyOnce: true,
+      },
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -80,6 +110,10 @@ export default {};
   background: var(--Apple-Grey, #f5f5f7);
   padding: 24px 32px;
   max-width: 164px;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .first {
   margin-bottom: 16px;

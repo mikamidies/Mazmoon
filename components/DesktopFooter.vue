@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <div class="container">
-      <div class="cardo">
+      <div data-aos="fade-up" class="cardo">
         <div class="left">
           <h4 class="title">
             <span>
@@ -158,38 +158,121 @@
           Yozing, agar biror narsa aniq bo'lmasa ham, biz sizga hamma narsani
           aytib beramiz. Tez javob beramiz)
         </p>
-        <form action="">
+        <form @submit.prevent="onSubmit">
           <div class="type">
             <p class="top">Sizning loyihangiz qanday?</p>
             <div class="items buttons">
-              <button type="button">Web sayt</button>
-              <button type="button">Korporativ sayt</button>
-              <button type="button">CRM system</button>
-              <button type="button">Mobil ilova</button>
-              <button type="button">Lending sayt</button>
-              <button type="button">Internet do’kon</button>
+              <button
+                @click="type = 'web'"
+                :class="{ active: type == 'web' }"
+                type="button"
+              >
+                Web sayt
+              </button>
+              <button
+                @click="type = 'corp'"
+                :class="{ active: type == 'corp' }"
+                type="button"
+              >
+                Korporativ sayt
+              </button>
+              <button
+                @click="type = 'crm'"
+                :class="{ active: type == 'crm' }"
+                type="button"
+              >
+                CRM system
+              </button>
+              <button
+                @click="type = 'mobil'"
+                :class="{ active: type == 'mobil' }"
+                type="button"
+              >
+                Mobil ilova
+              </button>
+              <button
+                @click="type = 'lending'"
+                :class="{ active: type == 'lending' }"
+                type="button"
+              >
+                Lending sayt
+              </button>
+              <button
+                @click="type = 'e-shop'"
+                :class="{ active: type == 'e-shop' }"
+                type="button"
+              >
+                Internet do’kon
+              </button>
             </div>
           </div>
           <div class="budget">
             <p class="top">Loyihaning taxminiy byudjeti qancha?</p>
             <div class="items buttons">
-              <button type="button">4 000 000 sum</button>
-              <button type="button">12 000 000 sum</button>
-              <button type="button">18 000 000 sum</button>
-              <button type="button">20 000 000 sum</button>
-              <button type="button">26 000 000 sum</button>
-              <button type="button">Kelishamiz</button>
+              <button
+                @click="price = 4000000"
+                :class="{ active: price == 4000000 }"
+                type="button"
+              >
+                4 000 000 sum
+              </button>
+              <button
+                @click="price = 12000000"
+                :class="{ active: price == 12000000 }"
+                type="button"
+              >
+                12 000 000 sum
+              </button>
+              <button
+                @click="price = 18000000"
+                :class="{ active: price == 18000000 }"
+                type="button"
+              >
+                18 000 000 sum
+              </button>
+              <button
+                @click="price = 20000000"
+                :class="{ active: price == 20000000 }"
+                type="button"
+              >
+                20 000 000 sum
+              </button>
+              <button
+                @click="price = 26000000"
+                :class="{ active: price == 26000000 }"
+                type="button"
+              >
+                26 000 000 sum
+              </button>
+              <button
+                @click="price = NaN"
+                :class="{ active: price == NaN }"
+                type="button"
+              >
+                Kelishamiz
+              </button>
             </div>
           </div>
           <div class="form">
             <p class="top">Aloqa uchun ma'lumotlarni kiriting</p>
             <div class="inputs">
-              <input type="text" placeholder="Ismingiz nima?" />
               <input
+                v-model="full_name"
+                required
                 type="text"
-                placeholder="Elektron pochtangiz yoki telefon raqamingiz"
+                placeholder="Ismingiz nima?"
               />
-              <textarea placeholder="Har qanday izohingiz"></textarea>
+              <input
+                id="num"
+                v-model="number"
+                required
+                type="text"
+                placeholder="Telefon raqamingiz"
+              />
+              <textarea
+                v-model="message"
+                placeholder="Har qanday izohingiz"
+              ></textarea>
             </div>
           </div>
           <div class="butn">
@@ -221,11 +304,27 @@
 </template>
 
 <script>
+import formApi from "@/api/form.js";
+import IMask from "imask";
+
 export default {
   data() {
     return {
       modalHandle: false,
+      type: "",
+      price: "",
+      full_name: "",
+      number: "",
+      message: "",
     };
+  },
+
+  mounted() {
+    const element = document.getElementById("num");
+    const maskOptions = {
+      mask: "+{998}(00)000-00-00",
+    };
+    const mask = IMask(element, maskOptions);
   },
 
   watch: {
@@ -236,6 +335,34 @@ export default {
       } else {
         document.body.style.overflow = "auto";
         document.body.style.height = "auto";
+      }
+    },
+  },
+
+  methods: {
+    async onSubmit() {
+      const formData = {
+        type: this.type,
+        price: this.price,
+        full_name: this.full_name,
+        number: this.number,
+        message: this.message,
+      };
+
+      if (this.number.length > 1) {
+        const res = await formApi.sendApplication(formData);
+
+        if (res && res.status === 201) {
+          this.$toast.success("Successfully sent");
+        } else {
+          this.$toast.error("Error");
+        }
+
+        this.type = "";
+        this.price = "";
+        this.name = "";
+        this.number = "";
+        this.message = "";
       }
     },
   },
@@ -383,6 +510,12 @@ export default {
   font-style: normal;
   font-weight: 500;
   line-height: 150%; /* 27px */
+}
+.type button.active,
+.budget button.active {
+  background: linear-gradient(105deg, #3c4bdc -9.99%, #7b7dff 109.77%);
+  color: white;
+  border-color: #3c4bdc;
 }
 .budget {
   margin-bottom: 120px;

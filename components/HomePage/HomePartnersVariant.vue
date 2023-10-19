@@ -33,8 +33,6 @@ export default {
       type: "fade",
     });
     splider.mount();
-
-    console.log(AutoScroll);
   },
 };
 </script>

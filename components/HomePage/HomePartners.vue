@@ -5,7 +5,12 @@
         <span> Biz korporatsiyalar bilan </span> qanday ishlashni bilamiz
       </h4>
       <div class="items">
-        <div class="swiper swiper-fade" ref="swiper_1">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="300"
+          class="swiper swiper-fade"
+          ref="swiper_1"
+        >
           <p class="num">1</p>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -16,7 +21,12 @@
             </div>
           </div>
         </div>
-        <div class="swiper" ref="swiper_2">
+        <div
+          class="swiper"
+          data-aos="fade-up"
+          data-aos-duration="400"
+          ref="swiper_2"
+        >
           <p class="num">2</p>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -27,7 +37,12 @@
             </div>
           </div>
         </div>
-        <div class="swiper" ref="swiper_3">
+        <div
+          class="swiper"
+          data-aos="fade-up"
+          data-aos-duration="500"
+          ref="swiper_3"
+        >
           <p class="num">3</p>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -38,7 +53,12 @@
             </div>
           </div>
         </div>
-        <div class="swiper" ref="swiper_4">
+        <div
+          class="swiper"
+          data-aos="fade-up"
+          data-aos-duration="600"
+          ref="swiper_4"
+        >
           <p class="num">4</p>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -49,7 +69,12 @@
             </div>
           </div>
         </div>
-        <div class="swiper" ref="swiper_5">
+        <div
+          class="swiper"
+          data-aos="fade-up"
+          data-aos-duration="700"
+          ref="swiper_5"
+        >
           <p class="num">5</p>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -60,7 +85,12 @@
             </div>
           </div>
         </div>
-        <div class="swiper" ref="swiper_6">
+        <div
+          class="swiper"
+          data-aos="fade-up"
+          data-aos-duration="800"
+          ref="swiper_6"
+        >
           <p class="num">6</p>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -71,7 +101,12 @@
             </div>
           </div>
         </div>
-        <div class="swiper" ref="swiper_7">
+        <div
+          class="swiper"
+          data-aos="fade-up"
+          data-aos-duration="900"
+          ref="swiper_7"
+        >
           <p class="num">7</p>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -82,7 +117,12 @@
             </div>
           </div>
         </div>
-        <div class="swiper" ref="swiper_8">
+        <div
+          class="swiper"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          ref="swiper_8"
+        >
           <p class="num">8</p>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -93,7 +133,12 @@
             </div>
           </div>
         </div>
-        <div class="swiper" ref="swiper_9">
+        <div
+          class="swiper"
+          data-aos="fade-up"
+          data-aos-duration="1100"
+          ref="swiper_9"
+        >
           <p class="num">9</p>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -104,7 +149,12 @@
             </div>
           </div>
         </div>
-        <div class="swiper" ref="swiper_10">
+        <div
+          class="swiper"
+          data-aos="fade-up"
+          data-aos-duration="1200"
+          ref="swiper_10"
+        >
           <p class="num">10</p>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -115,7 +165,12 @@
             </div>
           </div>
         </div>
-        <div class="swiper" ref="swiper_11">
+        <div
+          class="swiper"
+          data-aos="fade-up"
+          data-aos-duration="1300"
+          ref="swiper_11"
+        >
           <p class="num">11</p>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -126,7 +181,12 @@
             </div>
           </div>
         </div>
-        <div class="swiper" ref="swiper_12">
+        <div
+          class="swiper"
+          data-aos="fade-up"
+          data-aos-duration="1400"
+          ref="swiper_12"
+        >
           <p class="num">12</p>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -143,62 +203,33 @@
 </template>
 
 <script>
-import Swiper from "swiper";
+import Swiper from "swiper/swiper-bundle.js";
 import "swiper/swiper-bundle.min.css";
 
 export default {
+  data() {
+    return {
+      swiperList: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      swiperObj: {},
+    };
+  },
   mounted() {
-    new Swiper(this.$refs.swiper_1, {
-      slidesPerView: 1,
-      effect: "fade",
-      autoplay: {
-        delay: 1000,
-      },
+    this.swiperList.forEach((item) => {
+      this.swiperObj[`swiperVal${item}`] = new Swiper(
+        this.$refs[`swiper_${item}`],
+        {
+          slidesPerView: 1,
+          effect: "fade",
+          loop: true,
+        }
+      );
     });
-    new Swiper(this.$refs.swiper_2, {
-      slidesPerView: 1,
-      effect: "fade",
-    });
-    new Swiper(this.$refs.swiper_3, {
-      slidesPerView: 1,
-      effect: "fade",
-    });
-    new Swiper(this.$refs.swiper_4, {
-      slidesPerView: 1,
-      effect: "fade",
-    });
-    new Swiper(this.$refs.swiper_5, {
-      slidesPerView: 1,
-      effect: "fade",
-    });
-    new Swiper(this.$refs.swiper_6, {
-      slidesPerView: 1,
-      effect: "fade",
-    });
-    new Swiper(this.$refs.swiper_7, {
-      slidesPerView: 1,
-      effect: "fade",
-    });
-    new Swiper(this.$refs.swiper_8, {
-      slidesPerView: 1,
-      effect: "fade",
-    });
-    new Swiper(this.$refs.swiper_9, {
-      slidesPerView: 1,
-      effect: "fade",
-    });
-    new Swiper(this.$refs.swiper_10, {
-      slidesPerView: 1,
-      effect: "fade",
-    });
-    new Swiper(this.$refs.swiper_11, {
-      slidesPerView: 1,
-      effect: "fade",
-    });
-    new Swiper(this.$refs.swiper_12, {
-      slidesPerView: 1,
-      effect: "fade",
-    });
+
+    setInterval(() => {
+      let randomSlide = Math.floor(Math.random() * 12) + 1;
+
+      this.swiperObj[`swiperVal${randomSlide}`].slideNext();
+    }, 2000);
   },
 };
 </script>
@@ -235,6 +266,9 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 9;
+  background: white;
 }
 .num {
   position: absolute;
@@ -245,6 +279,7 @@ export default {
   font-style: normal;
   font-weight: 400;
   line-height: 140%; /* 19.6px */
+  z-index: 100;
 }
 @media screen and (max-width: 1024px) {
   .wrap {

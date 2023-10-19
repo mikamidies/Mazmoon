@@ -42,7 +42,7 @@
           </button>
         </div>
       </div>
-      <div class="swiper" ref="swiper">
+      <div data-aos="fade-up" class="swiper" ref="swiper">
         <div class="swiper-wrapper">
           <div v-for="item in reviews" :key="item.id" class="swiper-slide">
             <div class="row">
@@ -117,7 +117,7 @@
 </template>
 
 <script>
-import Swiper from "swiper";
+import Swiper from "swiper/swiper-bundle.js";
 import "swiper/swiper-bundle.min.css";
 
 export default {
@@ -139,6 +139,15 @@ export default {
     new Swiper(this.$refs.swiper, {
       slidesPerView: 1,
       spaceBetween: 24,
+      navigation: {
+        prevEl: ".prev",
+        nextEl: ".next",
+      },
+      loop: true,
+      autoplay: {
+        delay: 2000,
+      },
+      speed: 3000,
     });
 
     // let playButtons = document.querySelectorAll(".play");

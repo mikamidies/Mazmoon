@@ -26,8 +26,6 @@ export default {
     const staff = await staffApi.getStaff($axios);
     const reviews = await reviewsApi.getReviews($axios);
 
-    console.log(projects);
-
     return {
       projects,
       vacansies,
