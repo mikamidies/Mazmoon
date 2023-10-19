@@ -104,12 +104,47 @@
                   <div class="comment">
                     <div v-html="item.text"></div>
 
-                    <button class="full">Читать Полный отзыв</button>
+                    <button @click="getId(item.id)" class="full">
+                      Читать Полный отзыв
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="modaller" :class="{ show: modalHandle }">
+      <div class="carder">
+        <div class="x" @click="modalHandle = false">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M16.2431 7.75738L7.75781 16.2427M16.2431 16.2426L7.75781 7.75732"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div class="person">
+          <div class="img">
+            <img :src="reviewsId.image" alt="" class="pic" />
+          </div>
+          <div>
+            <h4>{{ reviewsId.name }}</h4>
+            <p>{{ reviewsId.subtitle }}</p>
+          </div>
+        </div>
+        <div class="comment_data">
+          <div v-html="reviewsId.text"></div>
         </div>
       </div>
     </div>
@@ -123,6 +158,19 @@ import "swiper/swiper-bundle.min.css";
 export default {
   props: ["reviews"],
 
+  data() {
+    return {
+      modalHandle: false,
+      reviewsId: {},
+    };
+  },
+
+  watch: {
+    $route() {
+      this.modalHandle = false;
+    },
+  },
+
   methods: {
     playVideo(id) {
       let video = this.$refs[`video${id}`][0];
@@ -132,6 +180,14 @@ export default {
       } else {
         video.pause();
       }
+    },
+
+    getId(id) {
+      this.reviewsId = this.reviews.find((item) => item.id == id);
+
+      console.log(this.reviewsId);
+
+      this.modalHandle = true;
     },
   },
 
@@ -149,28 +205,48 @@ export default {
       },
       speed: 3000,
     });
-
-    // let playButtons = document.querySelectorAll(".play");
-    // let videos = document.querySelectorAll(".video");
-    // // let playLogo = document.querySelector(".play_logo");
-    // // let pauseLogo = document.querySelector(".pause_logo");
-
-    // playButtons.forEach((playButton) => {
-    //   playButton.addEventListener("click", function () {
-    //     videos.forEach((video) => {
-    //       if (video.paused == true) {
-    //         video.play();
-    //       } else {
-    //         video.pause();
-    //       }
-    //     });
-    //   });
-    // });
   },
 };
 </script>
 
 <style scoped>
+.modaller {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  z-index: 120;
+  background: rgba(41, 41, 41, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s;
+  display: none;
+}
+.modaller.show {
+  display: flex;
+}
+.carder {
+  border-radius: 40px;
+  background: var(--Apple-Grey, #f5f5f7);
+  padding: 40px;
+  position: relative;
+  max-width: 1320px;
+}
+.x {
+  background: #292929;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+}
 .play_logo {
   display: block;
 }
@@ -339,6 +415,15 @@ video {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.comment_data::v-deep div,
+.comment_data::v-deep p {
+  color: var(--Black, #292929);
+  font-family: var(--medium);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 33.6px */
 }
 .right {
   padding: 0 0 0 16px;
