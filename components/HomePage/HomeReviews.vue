@@ -94,7 +94,15 @@
                 <div class="cardo">
                   <div class="person">
                     <div class="img">
-                      <img :src="item.image" alt="" class="pic" />
+                      <img
+                        :src="item.image"
+                        :title="item.name"
+                        :alt="item.name"
+                        width="100%"
+                        height="100%"
+                        class="pic"
+                        loading="lazy"
+                      />
                     </div>
                     <div>
                       <h4>{{ item.name }}</h4>
@@ -136,7 +144,15 @@
         </div>
         <div class="person">
           <div class="img">
-            <img :src="reviewsId.image" alt="" class="pic" />
+            <img
+              :src="reviewsId.image"
+              :title="reviewsId.name"
+              :alt="reviewsId.name"
+              width="100%"
+              height="100%"
+              class="pic"
+              loading="lazy"
+            />
           </div>
           <div>
             <h4>{{ reviewsId.name }}</h4>
@@ -462,7 +478,7 @@ video {
   .cardo {
     padding: 24px;
   }
-  .comment p {
+  .comment::v-deep p {
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -474,6 +490,29 @@ video {
     font-style: normal;
     font-weight: 500;
     line-height: 140%;
+  }
+  .comment_data::v-deep p {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    margin-bottom: 24px;
+  }
+  .carder {
+    padding: 16px;
+    border-radius: 16px;
+    margin: 0 16px;
+  }
+  .x {
+    top: -8px;
+    right: -8px;
+  }
+  .person {
+    margin-bottom: 16px;
+  }
+  .person h4,
+  .person p {
+    font-size: 14px;
   }
 }
 </style>

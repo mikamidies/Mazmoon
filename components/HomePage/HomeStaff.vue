@@ -11,7 +11,15 @@
           :key="item.id"
         >
           <div class="img">
-            <img :src="item.image" alt="" class="pic" />
+            <img
+              :src="item.image"
+              :alt="item.title + ' from Mazmoon Group'"
+              :title="item.title + ' from Mazmoon Group'"
+              width="100%"
+              height="100%"
+              class="pic"
+              loading="lazy"
+            />
           </div>
           <div class="content">
             <p class="name">{{ item.title }}</p>

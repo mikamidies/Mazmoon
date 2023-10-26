@@ -48,8 +48,23 @@
           </div>
         </div>
         <div data-aos="fade-left" class="col-lg-5 col-xs-12 right">
-          <img src="@/assets/img/akmal.jpg" alt="" class="pic" />
-          <img src="@/assets/img/logo/white.svg" alt="" class="brand" />
+          <img
+            src="@/assets/img/akmal.jpg"
+            alt="Mazmoon Ceo"
+            title="Mazmoon Ceo"
+            width="100%"
+            height="100%"
+            class="pic"
+            loading="lazy"
+          />
+          <img
+            src="@/assets/img/logo/white.svg"
+            alt="Mazmoon Logo"
+            title="Mazmoon Logo"
+            width="80px"
+            height="58px"
+            class="brand"
+          />
           <div class="tag">
             <p class="name">Akmal</p>
             <p class="status">Art Director</p>

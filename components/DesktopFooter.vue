@@ -52,7 +52,7 @@
         </div>
         <div class="socs">
           <div class="soc">
-            <a href="#">
+            <a href="#" rel="”nofollow”">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -69,7 +69,7 @@
           </div>
           <div class="stick"></div>
           <div class="soc">
-            <a href="#">
+            <a href="#" rel="”nofollow”">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -86,7 +86,7 @@
           </div>
           <div class="stick"></div>
           <div class="soc">
-            <a href="#">
+            <a href="#" rel="”nofollow”">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -116,7 +116,7 @@
           </div>
           <div class="stick"></div>
           <div class="soc">
-            <a href="#">
+            <a href="#" rel="”nofollow”">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"

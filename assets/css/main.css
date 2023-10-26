@@ -159,6 +159,24 @@ table {
 /* .swiper-slide-active {
   z-index: 99 !important;
 } */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #7b7dff;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #3c4bdc;
+}
 @media screen and (max-width: 1024px) {
   .container {
     padding: 0 16px;

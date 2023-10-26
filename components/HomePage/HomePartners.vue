@@ -14,10 +14,26 @@
           <p class="num">1</p>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="@/assets/img/logo/part-1.png" alt="" class="pic" />
+              <img
+                src="@/assets/img/logo/part-1.png"
+                title="Mazmoon Group Partner"
+                alt="Mazmoon Group Partner"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                class="pic"
+              />
             </div>
             <div class="swiper-slide">
-              <img src="@/assets/img/logo/part-6.png" alt="" class="pic" />
+              <img
+                src="@/assets/img/logo/part-6.png"
+                title="Mazmoon Group Partner"
+                alt="Mazmoon Group Partner"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                class="pic"
+              />
             </div>
           </div>
         </div>
@@ -30,10 +46,26 @@
           <p class="num">2</p>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="@/assets/img/logo/part-3.png" alt="" class="pic" />
+              <img
+                src="@/assets/img/logo/part-3.png"
+                title="Mazmoon Group Partner"
+                alt="Mazmoon Group Partner"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                class="pic"
+              />
             </div>
             <div class="swiper-slide">
-              <img src="@/assets/img/logo/part-4.png" alt="" class="pic" />
+              <img
+                src="@/assets/img/logo/part-4.png"
+                title="Mazmoon Group Partner"
+                alt="Mazmoon Group Partner"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                class="pic"
+              />
             </div>
           </div>
         </div>
@@ -46,10 +78,26 @@
           <p class="num">3</p>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="@/assets/img/logo/part-5.png" alt="" class="pic" />
+              <img
+                src="@/assets/img/logo/part-5.png"
+                title="Mazmoon Group Partner"
+                alt="Mazmoon Group Partner"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                class="pic"
+              />
             </div>
             <div class="swiper-slide">
-              <img src="@/assets/img/logo/part-6.png" alt="" class="pic" />
+              <img
+                src="@/assets/img/logo/part-6.png"
+                title="Mazmoon Group Partner"
+                alt="Mazmoon Group Partner"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                class="pic"
+              />
             </div>
           </div>
         </div>
@@ -62,10 +110,26 @@
           <p class="num">4</p>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="@/assets/img/logo/part-7.png" alt="" class="pic" />
+              <img
+                src="@/assets/img/logo/part-7.png"
+                title="Mazmoon Group Partner"
+                alt="Mazmoon Group Partner"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                class="pic"
+              />
             </div>
             <div class="swiper-slide">
-              <img src="@/assets/img/logo/part-1.png" alt="" class="pic" />
+              <img
+                src="@/assets/img/logo/part-1.png"
+                title="Mazmoon Group Partner"
+                alt="Mazmoon Group Partner"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                class="pic"
+              />
             </div>
           </div>
         </div>
@@ -78,10 +142,26 @@
           <p class="num">5</p>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="@/assets/img/logo/part-1.png" alt="" class="pic" />
+              <img
+                src="@/assets/img/logo/part-1.png"
+                title="Mazmoon Group Partner"
+                alt="Mazmoon Group Partner"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                class="pic"
+              />
             </div>
             <div class="swiper-slide">
-              <img src="@/assets/img/logo/part-6.png" alt="" class="pic" />
+              <img
+                src="@/assets/img/logo/part-6.png"
+                title="Mazmoon Group Partner"
+                alt="Mazmoon Group Partner"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                class="pic"
+              />
             </div>
           </div>
         </div>
@@ -94,10 +174,26 @@
           <p class="num">6</p>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="@/assets/img/logo/part-3.png" alt="" class="pic" />
+              <img
+                src="@/assets/img/logo/part-3.png"
+                title="Mazmoon Group Partner"
+                alt="Mazmoon Group Partner"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                class="pic"
+              />
             </div>
             <div class="swiper-slide">
-              <img src="@/assets/img/logo/part-4.png" alt="" class="pic" />
+              <img
+                src="@/assets/img/logo/part-4.png"
+                title="Mazmoon Group Partner"
+                alt="Mazmoon Group Partner"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                class="pic"
+              />
             </div>
           </div>
         </div>
@@ -110,10 +206,26 @@
           <p class="num">7</p>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="@/assets/img/logo/part-5.png" alt="" class="pic" />
+              <img
+                src="@/assets/img/logo/part-5.png"
+                title="Mazmoon Group Partner"
+                alt="Mazmoon Group Partner"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                class="pic"
+              />
             </div>
             <div class="swiper-slide">
-              <img src="@/assets/img/logo/part-6.png" alt="" class="pic" />
+              <img
+                src="@/assets/img/logo/part-6.png"
+                title="Mazmoon Group Partner"
+                alt="Mazmoon Group Partner"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                class="pic"
+              />
             </div>
           </div>
         </div>
@@ -126,10 +238,26 @@
           <p class="num">8</p>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="@/assets/img/logo/part-7.png" alt="" class="pic" />
+              <img
+                src="@/assets/img/logo/part-7.png"
+                title="Mazmoon Group Partner"
+                alt="Mazmoon Group Partner"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                class="pic"
+              />
             </div>
             <div class="swiper-slide">
-              <img src="@/assets/img/logo/part-1.png" alt="" class="pic" />
+              <img
+                src="@/assets/img/logo/part-1.png"
+                title="Mazmoon Group Partner"
+                alt="Mazmoon Group Partner"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                class="pic"
+              />
             </div>
           </div>
         </div>
@@ -142,10 +270,26 @@
           <p class="num">9</p>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="@/assets/img/logo/part-1.png" alt="" class="pic" />
+              <img
+                src="@/assets/img/logo/part-1.png"
+                title="Mazmoon Group Partner"
+                alt="Mazmoon Group Partner"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                class="pic"
+              />
             </div>
             <div class="swiper-slide">
-              <img src="@/assets/img/logo/part-6.png" alt="" class="pic" />
+              <img
+                src="@/assets/img/logo/part-6.png"
+                title="Mazmoon Group Partner"
+                alt="Mazmoon Group Partner"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                class="pic"
+              />
             </div>
           </div>
         </div>
@@ -158,10 +302,26 @@
           <p class="num">10</p>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="@/assets/img/logo/part-3.png" alt="" class="pic" />
+              <img
+                src="@/assets/img/logo/part-3.png"
+                title="Mazmoon Group Partner"
+                alt="Mazmoon Group Partner"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                class="pic"
+              />
             </div>
             <div class="swiper-slide">
-              <img src="@/assets/img/logo/part-4.png" alt="" class="pic" />
+              <img
+                src="@/assets/img/logo/part-4.png"
+                title="Mazmoon Group Partner"
+                alt="Mazmoon Group Partner"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                class="pic"
+              />
             </div>
           </div>
         </div>
@@ -174,10 +334,26 @@
           <p class="num">11</p>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="@/assets/img/logo/part-5.png" alt="" class="pic" />
+              <img
+                src="@/assets/img/logo/part-5.png"
+                title="Mazmoon Group Partner"
+                alt="Mazmoon Group Partner"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                class="pic"
+              />
             </div>
             <div class="swiper-slide">
-              <img src="@/assets/img/logo/part-6.png" alt="" class="pic" />
+              <img
+                src="@/assets/img/logo/part-6.png"
+                title="Mazmoon Group Partner"
+                alt="Mazmoon Group Partner"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                class="pic"
+              />
             </div>
           </div>
         </div>
@@ -190,10 +366,26 @@
           <p class="num">12</p>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="@/assets/img/logo/part-7.png" alt="" class="pic" />
+              <img
+                src="@/assets/img/logo/part-7.png"
+                title="Mazmoon Group Partner"
+                alt="Mazmoon Group Partner"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                class="pic"
+              />
             </div>
             <div class="swiper-slide">
-              <img src="@/assets/img/logo/part-1.png" alt="" class="pic" />
+              <img
+                src="@/assets/img/logo/part-1.png"
+                title="Mazmoon Group Partner"
+                alt="Mazmoon Group Partner"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                class="pic"
+              />
             </div>
           </div>
         </div>
@@ -269,6 +461,11 @@ export default {
   position: relative;
   z-index: 9;
   background: white;
+}
+.swiper-slide img {
+  height: 30%;
+  width: 50%;
+  object-fit: contain;
 }
 .num {
   position: absolute;

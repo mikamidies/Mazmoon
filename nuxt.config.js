@@ -12,7 +12,10 @@ export default {
 
   css: ["@/assets/css/main.css"],
 
-  plugins: ["@/plugins/aos.client.js"],
+  plugins: [
+    "@/plugins/aos.client.js",
+    { src: "@/plugins/replain.js", mode: "client" },
+  ],
 
   components: true,
 

@@ -11,7 +11,15 @@
           :key="item.id"
         >
           <a target="_blank" :href="item.url">
-            <img :src="item.image" alt="" class="pic" />
+            <img
+              :src="item.image"
+              :alt="item.title + ' by Mazmoon Group'"
+              :title="item.title + ' by Mazmoon Group'"
+              class="pic"
+              width="100%"
+              height="100%"
+              loading="lazy"
+            />
             <p class="name">
               {{ item.title }}
             </p>

@@ -3,7 +3,13 @@
     <div class="container">
       <div class="left">
         <NuxtLink to="/">
-          <img src="@/assets/img/logo/brand.svg" alt="" />
+          <img
+            src="@/assets/img/logo/brand.svg"
+            alt="Mazmoon Logo"
+            title="Mazmoon Logo"
+            width="100%"
+            height="100%"
+          />
         </NuxtLink>
       </div>
       <div class="right">
@@ -38,6 +44,7 @@
         </button>
       </div>
     </div>
+
     <div class="wrep modal" :class="{ show: modalHandle == true }">
       <div class="x" @click="modalHandle = false">
         <svg
