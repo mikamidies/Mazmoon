@@ -229,7 +229,7 @@ export default {
       let randomSlide = Math.floor(Math.random() * 12) + 1;
 
       this.swiperObj[`swiperVal${randomSlide}`].slideNext();
-    }, 2000);
+    }, 1500);
   },
 };
 </script>

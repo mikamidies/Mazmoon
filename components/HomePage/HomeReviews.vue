@@ -200,9 +200,6 @@ export default {
         nextEl: ".next",
       },
       loop: true,
-      autoplay: {
-        delay: 2000,
-      },
       speed: 3000,
     });
   },
@@ -319,6 +316,7 @@ export default {
 video {
   width: 100%;
   height: 100%;
+  min-height: 488px;
   object-fit: cover;
 }
 .play {

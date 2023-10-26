@@ -150,5 +150,9 @@ export default {
   .pic {
     height: 280px;
   }
+  .name {
+    bottom: 24px;
+    left: 24px;
+  }
 }
 </style>

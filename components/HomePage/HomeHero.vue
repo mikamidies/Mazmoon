@@ -13,9 +13,9 @@
             <p class="dot"></p>
             <p class="tag">Tadqiqot</p>
             <p class="dot"></p>
-            <p class="tag">Dizaynni qo'llab-quvvatlash</p>
-            <p class="dot"></p>
             <p class="tag">Autstaffing</p>
+            <p class="dot"></p>
+            <p class="tag">Dizaynni qo'llab-quvvatlash</p>
             <p class="dot"></p>
             <p class="tag">Kreativ</p>
           </div>
@@ -172,7 +172,7 @@ export default {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 16px;
-    margin-top: 80px;
+    margin-top: 48px;
   }
   .first {
     margin: 0;
