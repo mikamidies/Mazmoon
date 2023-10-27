@@ -270,21 +270,21 @@ export default {
         message: this.message,
       };
 
-      if (this.number.length > 1) {
-        const res = await formApi.sendApplication(formData);
+      const res = await formApi.sendApplication(formData);
 
-        if (res && res.status === 201) {
-          this.$toast.success("Successfully sent");
-        } else {
-          this.$toast.error("Error");
-        }
-
-        this.type = "";
-        this.price = "";
-        this.name = "";
-        this.number = "";
-        this.message = "";
+      if (res && res.status === 201) {
+        this.$toast.success("Successfully sent");
+      } else {
+        this.$toast.error("Error");
       }
+
+      this.type = "";
+      this.price = "";
+      this.full_name = "";
+      this.number = "";
+      this.message = "";
+
+      this.modalHandle = false;
     },
   },
 };
