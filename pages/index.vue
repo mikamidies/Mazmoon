@@ -86,8 +86,6 @@ export default {
     const reviews = await reviewsApi.getReviews($axios);
     const info = await infoApi.getInfo($axios);
 
-    console.log(info);
-
     return {
       projects,
       vacansies,

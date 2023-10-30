@@ -26,6 +26,7 @@
     "node-fetch": "^2.6.1",
     "nuxt": "^2.15.8",
     "swiper": "^9.4.1",
+    "v-mask": "^2.3.0",
     "vue": "^2.7.10",
     "vue-countup-v2": "^4.0.0",
     "vue-server-renderer": "^2.7.10",

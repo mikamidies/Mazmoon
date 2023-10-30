@@ -201,8 +201,6 @@ export default {
     getId(id) {
       this.reviewsId = this.reviews.find((item) => item.id == id);
 
-      console.log(this.reviewsId);
-
       this.modalHandle = true;
     },
   },

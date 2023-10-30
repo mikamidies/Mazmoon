@@ -13,10 +13,12 @@
         </NuxtLink>
       </div>
       <div class="right">
-        <a href="mailto:mazmoongr@gmail.com" class="mail">
-          mazmoongr@gmail.com
+        <a target="_blank" :href="`mailto:${info.email}`" class="mail">
+          {{ info.email }}
         </a>
-        <a href="#" class="telegram">Написать в телеграм</a>
+        <a target="_blank" :href="info.telegram" class="telegram"
+          >Написать в телеграм</a
+        >
         <button @click="modalHandle = true" class="button">
           <span> Заявка </span>
           <svg
@@ -174,7 +176,7 @@
                 placeholder="Ismingiz nima?"
               />
               <input
-                id="numero"
+                v-mask="'+998 (##) ###-##-##'"
                 v-model="number"
                 required
                 type="text"
@@ -216,7 +218,7 @@
 
 <script>
 import formApi from "@/api/form.js";
-import IMask from "imask";
+import infoApi from "@/api/info.js";
 
 export default {
   data() {
@@ -227,7 +229,18 @@ export default {
       full_name: "",
       number: "",
       message: "",
+
+      info: {},
+
+      token: "6634150070:AAEKuBPXKTxnw47yxkMt1TLQ-ZxBQPOPqvc",
+      chatId: "-1001823370666",
     };
+  },
+
+  async fetch() {
+    const info = await infoApi.getInfo(this.$axios);
+
+    this.info = info;
   },
 
   mounted() {
@@ -240,12 +253,6 @@ export default {
       }
     }
     window.addEventListener("scroll", scrollHeader);
-
-    const element = document.getElementById("numero");
-    const maskOptions = {
-      mask: "+{998}(00)000-00-00",
-    };
-    const mask = IMask(element, maskOptions);
   },
 
   watch: {
@@ -278,11 +285,21 @@ export default {
         this.$toast.error("Error");
       }
 
-      this.type = "";
-      this.price = "";
-      this.full_name = "";
-      this.number = "";
-      this.message = "";
+      const message = `Name: ${this.full_name}%0APhone Number: ${this.number}%0AMessage: ${this.message}%0AType: ${this.type}%0APrice: ${this.price}`;
+
+      this.$axios
+        .post(
+          `https://api.telegram.org/bot${this.token}/sendMessage?chat_id=${this.chatId}&text=${message}`
+        )
+        .then((response) => {
+          console.log("Successfully", response);
+
+          this.type = "";
+          this.price = "";
+          this.full_name = "";
+          this.number = "";
+          this.message = "";
+        });
 
       this.modalHandle = false;
     },

@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <div class="container">
-      <div data-aos="fade-up" class="cardo">
+      <div class="cardo">
         <div class="left">
           <h4 class="title">
             <span>
@@ -39,20 +39,20 @@
         <div class="items">
           <div class="item">
             <p class="sup">Manzilimiz</p>
-            <p class="sub">Ziyolilar 4G, Tashkent 100170</p>
+            <p class="sub">{{ info.adres }}</p>
           </div>
           <div class="item">
             <p class="sup">Telefon raqamimiz</p>
-            <p class="sub">+998 33 571 46 56</p>
+            <p class="sub">{{ info.nbm }}</p>
           </div>
           <div class="item">
             <p class="sup">Elektron pochtamiz</p>
-            <p class="sub">mazmoongr@gmail.com</p>
+            <p class="sub">{{ info.email }}</p>
           </div>
         </div>
         <div class="socs">
           <div class="soc">
-            <a href="#" rel="”nofollow”">
+            <a :href="info.instagram" rel="”nofollow”">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -69,7 +69,7 @@
           </div>
           <div class="stick"></div>
           <div class="soc">
-            <a href="#" rel="”nofollow”">
+            <a :href="info.youtube" rel="”nofollow”">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -86,37 +86,27 @@
           </div>
           <div class="stick"></div>
           <div class="soc">
-            <a href="#" rel="”nofollow”">
+            <a :href="info.telegram" rel="”nofollow”">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
+                width="20"
+                height="18"
+                viewBox="0 0 20 18"
                 fill="none"
               >
-                <mask
-                  id="mask0_1073_305"
-                  style="mask-type: luminance"
-                  maskUnits="userSpaceOnUse"
-                  x="3"
-                  y="3"
-                  width="18"
-                  height="18"
-                >
-                  <path d="M21 3H3V21H21V3Z" fill="white" />
-                </mask>
-                <g mask="url(#mask0_1073_305)">
-                  <path
-                    d="M8.17805 18.9997V9.55356H5.1769V18.9997H8.17805ZM6.6781 8.26408C7.72445 8.26408 8.37587 7.53873 8.37587 6.63224C8.35628 5.70511 7.72445 5 6.698 5C5.67085 5 5 5.70511 5 6.63216C5 7.53864 5.65118 8.26399 6.65844 8.26399L6.6781 8.26408ZM9.83923 18.9997H12.8401V13.7251C12.8401 13.4432 12.8597 13.1605 12.939 12.9591C13.1559 12.3948 13.6497 11.8107 14.4789 11.8107C15.5646 11.8107 15.9992 12.6768 15.9992 13.9468V18.9997H19V13.5836C19 10.6822 17.5196 9.3321 15.5452 9.3321C13.9264 9.3321 13.2154 10.2787 12.8204 10.9234H12.8404V9.55389H9.83939C9.87856 10.44 9.83923 18.9997 9.83923 18.9997Z"
-                    fill="#353437"
-                  />
-                </g>
+                <path
+                  d="M1.90891 8.0952L17.2976 1.44458C18.0212 1.13183 18.8054 1.74041 18.682 2.51906L16.5779 15.795C16.448 16.6151 15.4331 16.9287 14.8631 16.325L11.5295 12.7699C10.8523 12.0526 10.7992 10.9488 11.4045 10.1698L13.7232 6.92966C13.8626 6.75029 13.6425 6.51431 13.4538 6.64086L8.60651 9.89269C7.78393 10.4445 6.78586 10.6715 5.80554 10.5297L2.16248 10.0028C1.16449 9.8585 0.98328 8.49523 1.90891 8.0952Z"
+                  stroke="#28303F"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </a>
           </div>
           <div class="stick"></div>
           <div class="soc">
-            <a href="#" rel="”nofollow”">
+            <a :href="info.facebook" rel="”nofollow”">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -125,8 +115,11 @@
                 fill="none"
               >
                 <path
-                  d="M8.66082 19.6341C15.4536 19.6341 19.1683 14.0045 19.1683 9.12273C19.1683 8.96285 19.1651 8.80371 19.1579 8.64522C19.8807 8.12202 20.5045 7.47421 21 6.73217C20.3383 7.02646 19.6262 7.22454 18.8792 7.31384C19.6417 6.85649 20.227 6.13294 20.5032 5.27048C19.7783 5.70068 18.9852 6.00395 18.1582 6.16722C17.4843 5.44912 16.5248 5 15.4625 5C13.4231 5 11.7693 6.65446 11.7693 8.69384C11.7693 8.98378 11.8017 9.26571 11.8651 9.53622C8.79574 9.38172 6.07409 7.91165 4.25261 5.67632C3.92454 6.24011 3.75199 6.88087 3.75256 7.53317C3.75256 8.8149 4.40451 9.94638 5.39598 10.6084C4.80951 10.5904 4.23592 10.432 3.72344 10.1463C3.72289 10.1618 3.72289 10.1769 3.72289 10.1935C3.72289 11.9826 4.99584 13.4764 6.68565 13.8149C6.36828 13.9014 6.04079 13.9451 5.71185 13.9449C5.4743 13.9449 5.24279 13.9215 5.01779 13.8783C5.48795 15.3462 6.85127 16.4144 8.46765 16.4442C7.20366 17.4353 5.61143 18.0256 3.8809 18.0256C3.58652 18.0258 3.29237 18.0088 3 17.9744C4.63441 19.0224 6.57494 19.6341 8.66082 19.6341Z"
-                  fill="#353437"
+                  d="M18 3H15C12.2386 3 10 5.23858 10 8V10H6V14H10V21H14V14H18V10H14V8C14 7.44772 14.4477 7 15 7H18V3Z"
+                  stroke="#28303F"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                 />
               </svg>
             </a>
@@ -263,7 +256,7 @@
                 placeholder="Ismingiz nima?"
               />
               <input
-                id="num"
+                v-mask="'+998 (##) ###-##-##'"
                 v-model="number"
                 required
                 type="text"
@@ -305,7 +298,7 @@
 
 <script>
 import formApi from "@/api/form.js";
-import IMask from "imask";
+import infoApi from "@/api/info.js";
 
 export default {
   data() {
@@ -316,16 +309,21 @@ export default {
       full_name: "",
       number: "",
       message: "",
+
+      info: {},
+
+      token: "6634150070:AAEKuBPXKTxnw47yxkMt1TLQ-ZxBQPOPqvc",
+      chatId: "-1001823370666",
     };
   },
 
-  mounted() {
-    const element = document.getElementById("num");
-    const maskOptions = {
-      mask: "+{998}(00)000-00-00",
-    };
-    const mask = IMask(element, maskOptions);
+  async fetch() {
+    const info = await infoApi.getInfo(this.$axios);
+
+    this.info = info;
   },
+
+  mounted() {},
 
   watch: {
     modalHandle(val) {
@@ -358,11 +356,23 @@ export default {
           this.$toast.error("Error");
         }
 
-        this.type = "";
-        this.price = "";
-        this.name = "";
-        this.number = "";
-        this.message = "";
+        const message = `Name: ${this.full_name}%0APhone Number: ${this.number}%0AMessage: ${this.message}%0AType: ${this.type}%0APrice: ${this.price}`;
+
+        this.$axios
+          .post(
+            `https://api.telegram.org/bot${this.token}/sendMessage?chat_id=${this.chatId}&text=${message}`
+          )
+          .then((response) => {
+            console.log("Successfully", response);
+
+            this.type = "";
+            this.price = "";
+            this.full_name = "";
+            this.number = "";
+            this.message = "";
+          });
+
+        this.modalHandle = false;
       }
     },
   },

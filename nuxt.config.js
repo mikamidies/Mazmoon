@@ -15,6 +15,7 @@ export default {
   plugins: [
     "@/plugins/aos.client.js",
     { src: "@/plugins/replain.js", mode: "client" },
+    { src: "@/plugins/v-mask.js", ssr: false },
   ],
 
   components: true,
@@ -52,6 +53,4 @@ export default {
       ];
     },
   },
-
-  // ssr: false,
 };
