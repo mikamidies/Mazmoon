@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <div class="container">
-      <h4 class="title">Loyihalarimiz</h4>
+      <h4 class="title">{{ $store.state.translations["main.projects"] }}</h4>
       <div class="items">
         <div
           data-aos="fade-up"

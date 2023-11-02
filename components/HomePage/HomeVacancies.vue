@@ -1,7 +1,10 @@
 <template>
   <div class="wrap">
     <div class="container">
-      <h4 class="title"><span> Bizga qobilyatli </span> ishchilar kerak</h4>
+      <h4 class="title">
+        <span> {{ $store.state.translations["main.vacansy-title-1"] }} </span>
+        {{ $store.state.translations["main.vacansy-title-2"] }}
+      </h4>
       <div class="items">
         <div
           class="item"

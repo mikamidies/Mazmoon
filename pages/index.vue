@@ -37,6 +37,7 @@ import vacansiesApi from "@/api/vacansies";
 import staffApi from "@/api/staff";
 import reviewsApi from "@/api/reviews";
 import infoApi from "@/api/info";
+import translationsApi from "@/api/translations";
 
 export default {
   head() {
@@ -79,12 +80,19 @@ export default {
     };
   },
 
-  async asyncData({ $axios }) {
+  data() {
+    return {};
+  },
+
+  async asyncData({ $axios, store }) {
     const projects = await projectsApi.getProjects($axios);
     const vacansies = await vacansiesApi.getVacansies($axios);
     const staff = await staffApi.getStaff($axios);
     const reviews = await reviewsApi.getReviews($axios);
     const info = await infoApi.getInfo($axios);
+    const translations = await translationsApi.getTranslations($axios);
+
+    await store.commit("getTranslations", translations.data);
 
     return {
       projects,

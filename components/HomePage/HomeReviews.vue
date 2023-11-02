@@ -3,7 +3,8 @@
     <div class="container">
       <div class="header">
         <h4 class="title">
-          <span> Biz eng zo’rimiz </span> faqat mijozlarimiz uchun
+          <span> {{ $store.state.translations["main.reviews-title-1"] }} </span>
+          {{ $store.state.translations["main.reviews-title-2"] }}
         </h4>
         <div class="buttons">
           <button class="prev">
@@ -78,7 +79,7 @@
                       />
                     </svg>
                   </span>
-                  Videoni ko’rish
+                  {{ $store.state.translations["main.video"] }}
                 </button>
                 <video
                   class="video"
@@ -113,7 +114,7 @@
                     <div v-html="item.text"></div>
 
                     <button @click="getId(item.id)" class="full">
-                      Читать Полный отзыв
+                      {{ $store.state.translations["main.read-full"] }}
                     </button>
                   </div>
                 </div>

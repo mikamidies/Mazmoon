@@ -4,20 +4,26 @@
       <div class="row">
         <div class="col-lg-10 col-xs-12 p-0">
           <h2 class="title">
-            <span class="one"> Millionlab insonlar </span>
-            <span class="two"> uchun raqamli </span>
-            <span class="three">mahsulotlarni loyihalashtiramiz</span>
+            <span class="one">
+              {{ $store.state.translations["main.title-1"] }}</span
+            >
+            <span class="two">
+              {{ $store.state.translations["main.title-2"] }}
+            </span>
+            <span class="three">{{
+              $store.state.translations["main.title-3"]
+            }}</span>
           </h2>
           <div class="tags">
-            <p class="tag">UX/UI dizayni</p>
+            <p class="tag">{{ $store.state.translations["main.service-1"] }}</p>
             <p class="dot"></p>
-            <p class="tag">Tadqiqot</p>
+            <p class="tag">{{ $store.state.translations["main.service-2"] }}</p>
             <p class="dot"></p>
-            <p class="tag">Autstaffing</p>
+            <p class="tag">{{ $store.state.translations["main.service-3"] }}</p>
             <p class="dot"></p>
-            <p class="tag">Dizaynni qo'llab-quvvatlash</p>
+            <p class="tag">{{ $store.state.translations["main.service-4"] }}</p>
             <p class="dot"></p>
-            <p class="tag">Kreativ</p>
+            <p class="tag">{{ $store.state.translations["main.service-5"] }}</p>
           </div>
         </div>
         <div class="col-lg-2 col-xs-12 right">
@@ -28,7 +34,7 @@
               :endVal="endVal"
               :options="options"
             />
-            <p class="sub">Web sayt loyihalarimiz</p>
+            <p class="sub">{{ $store.state.translations["main.sites"] }}</p>
           </div>
 
           <div class="cardo">
@@ -38,7 +44,7 @@
               :endVal="endVal2"
               :options="options"
             />
-            <p class="sub">Mobile ilova loyihalarimiz</p>
+            <p class="sub">{{ $store.state.translations["main.mobiles"] }}</p>
           </div>
         </div>
       </div>

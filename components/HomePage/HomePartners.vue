@@ -2,7 +2,8 @@
   <div class="wrap">
     <div class="container">
       <h4 class="title">
-        <span> Biz korporatsiyalar bilan </span> qanday ishlashni bilamiz
+        <span> {{ $store.state.translations["main.partners-title-1"] }} </span>
+        {{ $store.state.translations["main.partners-title-2"] }}
       </h4>
       <div class="items">
         <div

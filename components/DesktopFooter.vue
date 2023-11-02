@@ -5,10 +5,9 @@
         <div class="left">
           <h4 class="title">
             <span>
-              Keling, sizga qanday yordam berishimizni ko'rib chiqamiz!
+              {{ $store.state.translations["main.form-title-1"] }}
             </span>
-            va shu bo’yicha suhbatlashib narximizni va shartlarimizni
-            tushuntirib beramiz
+            {{ $store.state.translations["main.form-title-2"] }}
           </h4>
         </div>
         <div class="right">
@@ -30,23 +29,25 @@
                 />
               </svg>
             </span>
-            Arizangizni yuboring
+            {{ $store.state.translations["main.send-app"] }}
           </button>
-          <p class="txt">Biz oldindan to'lovsiz ishlamaymiz</p>
+          <p class="txt">{{ $store.state.translations["main.prepaid"] }}</p>
         </div>
       </div>
       <div class="bottom">
         <div class="items">
           <div class="item">
-            <p class="sup">Manzilimiz</p>
+            <p class="sup">
+              {{ $store.state.translations["main.our-address"] }}
+            </p>
             <p class="sub">{{ info.adres }}</p>
           </div>
           <div class="item">
-            <p class="sup">Telefon raqamimiz</p>
+            <p class="sup">{{ $store.state.translations["main.our-phone"] }}</p>
             <p class="sub">{{ info.nbm }}</p>
           </div>
           <div class="item">
-            <p class="sup">Elektron pochtamiz</p>
+            <p class="sup">{{ $store.state.translations["main.our-email"] }}</p>
             <p class="sub">{{ info.email }}</p>
           </div>
         </div>
@@ -146,125 +147,132 @@
         </svg>
       </div>
       <div class="cont small">
-        <h4 class="tite">Ishni boshlaymizmi?</h4>
+        <h4 class="tite">
+          {{ $store.state.translations["main.modal-title"] }}
+        </h4>
         <p class="sub">
-          Yozing, agar biror narsa aniq bo'lmasa ham, biz sizga hamma narsani
-          aytib beramiz. Tez javob beramiz)
+          {{ $store.state.translations["main.modal-sub"] }}
         </p>
         <form @submit.prevent="onSubmit">
           <div class="type">
-            <p class="top">Sizning loyihangiz qanday?</p>
+            <p class="top">
+              {{ $store.state.translations["main.project-type"] }}
+            </p>
             <div class="items buttons">
               <button
                 @click="type = 'web'"
                 :class="{ active: type == 'web' }"
                 type="button"
               >
-                Web sayt
+                {{ $store.state.translations["main.type-1"] }}
               </button>
               <button
                 @click="type = 'corp'"
                 :class="{ active: type == 'corp' }"
                 type="button"
               >
-                Korporativ sayt
+                {{ $store.state.translations["main.type-2"] }}
               </button>
               <button
                 @click="type = 'crm'"
                 :class="{ active: type == 'crm' }"
                 type="button"
               >
-                CRM system
+                {{ $store.state.translations["main.type-3"] }}
               </button>
               <button
                 @click="type = 'mobil'"
                 :class="{ active: type == 'mobil' }"
                 type="button"
               >
-                Mobil ilova
+                {{ $store.state.translations["main.type-4"] }}
               </button>
               <button
                 @click="type = 'lending'"
                 :class="{ active: type == 'lending' }"
                 type="button"
               >
-                Lending sayt
+                {{ $store.state.translations["main.type-5"] }}
               </button>
               <button
                 @click="type = 'e-shop'"
                 :class="{ active: type == 'e-shop' }"
                 type="button"
               >
-                Internet do’kon
+                {{ $store.state.translations["main.type-6"] }}
               </button>
             </div>
           </div>
           <div class="budget">
-            <p class="top">Loyihaning taxminiy byudjeti qancha?</p>
+            <p class="top">
+              {{ $store.state.translations["main.project-budget"] }}
+            </p>
             <div class="items buttons">
               <button
                 @click="price = 4000000"
                 :class="{ active: price == 4000000 }"
                 type="button"
               >
-                4 000 000 sum
+                {{ $store.state.translations["main.budget-1"] }}
               </button>
               <button
                 @click="price = 12000000"
                 :class="{ active: price == 12000000 }"
                 type="button"
               >
-                12 000 000 sum
+                {{ $store.state.translations["main.budget-2"] }}
               </button>
               <button
                 @click="price = 18000000"
                 :class="{ active: price == 18000000 }"
                 type="button"
               >
-                18 000 000 sum
+                {{ $store.state.translations["main.budget-3"] }}
               </button>
               <button
                 @click="price = 20000000"
                 :class="{ active: price == 20000000 }"
                 type="button"
               >
-                20 000 000 sum
+                {{ $store.state.translations["main.budget-4"] }}
               </button>
               <button
                 @click="price = 26000000"
                 :class="{ active: price == 26000000 }"
                 type="button"
               >
-                26 000 000 sum
+                {{ $store.state.translations["main.budget-5"] }}
               </button>
               <button
                 @click="price = NaN"
                 :class="{ active: price == NaN }"
                 type="button"
               >
-                Kelishamiz
+                {{ $store.state.translations["main.budget-6"] }}
               </button>
             </div>
           </div>
           <div class="form">
-            <p class="top">Aloqa uchun ma'lumotlarni kiriting</p>
+            <p class="top">
+              {{ $store.state.translations["main.form-title"] }}
+            </p>
             <div class="inputs">
               <input
                 v-model="full_name"
                 required
                 type="text"
-                placeholder="Ismingiz nima?"
+                :placeholder="$store.state.translations['main.your-name']"
               />
               <input
                 v-mask="'+998 (##) ###-##-##'"
                 v-model="number"
                 required
                 type="text"
-                placeholder="Telefon raqamingiz"
+                :placeholder="$store.state.translations['main.your-phone']"
               />
               <textarea
                 v-model="message"
-                placeholder="Har qanday izohingiz"
+                :placeholder="$store.state.translations['main.your-comment']"
               ></textarea>
             </div>
           </div>
@@ -287,7 +295,7 @@
                   />
                 </svg>
               </span>
-              Arizangizni yuboring
+              {{ $store.state.translations["main.send-app"] }}
             </button>
           </div>
         </form>

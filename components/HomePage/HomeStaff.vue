@@ -1,7 +1,10 @@
 <template>
   <div class="wrap">
     <div class="container">
-      <h4 class="title"><span>Qobilyatli jaydari</span> ishchilarimiz</h4>
+      <h4 class="title">
+        <span>{{ $store.state.translations["main.staff-title-1"] }}</span>
+        {{ $store.state.translations["main.staff-title-2"] }}
+      </h4>
       <div class="items">
         <div
           data-aos="fade-right"
@@ -110,7 +113,8 @@ export default {
   }
   .pic {
     width: 100%;
-    height: 164px;
+    height: auto;
+    aspect-ratio: 1;
   }
   .item {
     gap: 16px;

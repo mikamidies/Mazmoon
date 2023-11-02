@@ -4,18 +4,14 @@
       <div class="row">
         <div class="col-lg-7 col-xs-12 left">
           <h4 class="title">
-            <span> Zamonaviy raqamli </span> yechimlarni yaratamiz
+            <span> {{ $store.state.translations["main.ceo-title-1"] }} </span>
+            {{ $store.state.translations["main.ceo-title-2"] }}
           </h4>
           <p class="txt">
-            Bizning dizayn agentligimiz o'zingizning proyektlaringizni o'z
-            ichiga olgan yaratuvchilar jamoasidir. Bizning vazifamiz - sizning
-            fikrlaringizni, brandingingizni va innovatsiyalaringizni
-            rivojlantirishda yordam beramiz.
+            {{ $store.state.translations["main.ceo-txt-1"] }}
           </p>
           <p class="txt">
-            Bizning mijozlarimizga unikal, ko'rib chiqaruvchi va turli sohalar
-            uchun yaratilgan dizaynlarni taqdim qilish orqali ularning
-            muvaffaqiyatini ta'minlashdir.
+            {{ $store.state.translations["main.ceo-txt-2"] }}
           </p>
           <div class="items">
             <div class="item">
@@ -29,8 +25,7 @@
               </div>
 
               <p class="sub">
-                yildan beri biz Markaziy Osiyo va MDH davlatlarida faol
-                ishlaymiz
+                {{ $store.state.translations["main.ceo-sub-1"] }}
               </p>
             </div>
             <div class="item">
@@ -43,7 +38,9 @@
                 />
                 <span>+</span>
               </div>
-              <p class="sub">loyihalarni muvaffaqiyat orqali tugatkanmiz</p>
+              <p class="sub">
+                {{ $store.state.translations["main.ceo-sub-2"] }}
+              </p>
             </div>
           </div>
         </div>
@@ -66,8 +63,8 @@
             class="brand"
           />
           <div class="tag">
-            <p class="name">Akmal</p>
-            <p class="status">Art Director</p>
+            <p class="name">{{ $store.state.translations["main.akmal"] }}</p>
+            <p class="status">{{ $store.state.translations["main.ceo"] }}</p>
           </div>
         </div>
       </div>
