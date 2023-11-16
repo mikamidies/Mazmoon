@@ -41,6 +41,10 @@
               </svg>
             </button>
           </a>
+          <div
+            class="cover"
+            :style="`background: linear-gradient(to bottom, rgba(0, 0, 0, 0), ${item.color})`"
+          ></div>
         </div>
       </div>
     </div>
@@ -51,7 +55,9 @@
 export default {
   props: ["projects"],
 
-  mounted() {},
+  mounted() {
+    console.log(this.projects);
+  },
 };
 </script>
 
@@ -83,15 +89,14 @@ export default {
 .item a {
   display: flex;
 }
-.item::after {
+.cover {
   pointer-events: none;
   content: "";
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-  background: linear-gradient(180deg, rgba(255, 69, 69, 0) 0%, #00000090 100%);
   width: 100%;
-  height: 100%;
+  height: 50%;
   transition: 0.6s;
 }
 

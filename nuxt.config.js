@@ -30,7 +30,7 @@ export default {
   ],
 
   axios: {
-    baseURL: "https://mazmoonweb.pythonanywhere.com/api",
+    baseURL: process.env.BASE_URL,
   },
 
   pwa: {
