@@ -55,9 +55,7 @@
 export default {
   props: ["projects"],
 
-  mounted() {
-    console.log(this.projects);
-  },
+  mounted() {},
 };
 </script>
 

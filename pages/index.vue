@@ -6,7 +6,7 @@
     <HomeCEO />
     <HomeStaff :staff="staff" />
     <HomeVacancies :vacansies="vacansies" />
-    <HomeReviews :reviews="reviews" />
+    <!-- <HomeReviews :reviews="reviews" /> -->
     <HomePartners />
     <!-- <HomePartnersVariant /> -->
     <DesktopFooter />

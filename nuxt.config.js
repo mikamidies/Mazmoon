@@ -16,6 +16,7 @@ export default {
     "@/plugins/aos.client.js",
     { src: "@/plugins/replain.js", mode: "client" },
     { src: "@/plugins/v-mask.js", ssr: false },
+    { src: "@/plugins/facebook.js", ssr: false },
   ],
 
   components: true,
