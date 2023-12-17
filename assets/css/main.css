@@ -177,11 +177,35 @@ table {
 ::-webkit-scrollbar-thumb:hover {
   background: #3c4bdc;
 }
+.sender {
+  border-radius: 62px;
+  background: linear-gradient(105deg, #3c4bdc -9.99%, #7b7dff 109.77%);
+  padding: 12px 40px;
+  width: 100%;
+  color: var(--White, #fff);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  margin-top: 44px;
+  display: none;
+}
+.projekts .sender {
+  margin-top: 24px;
+}
 @media screen and (max-width: 1024px) {
   .container {
     padding: 0 16px;
   }
   .cont.small {
     padding: 0 24px;
+  }
+  .sender {
+    display: flex;
   }
 }
