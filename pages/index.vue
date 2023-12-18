@@ -1,7 +1,7 @@
 <template>
   <div class="master">
     <DesktopHeader />
-    <HomeHero />
+    <HomeHero :info="info" />
     <HomeAbout />
     <HomeProjects :projects="projects" />
     <HomeWhy :info="info" />
