@@ -132,5 +132,8 @@ export default {
     font-weight: 400;
     line-height: 140%;
   }
+  .wrap {
+    padding: 80px 0;
+  }
 }
 </style>

@@ -2,11 +2,14 @@
   <div class="master">
     <DesktopHeader />
     <HomeHero />
+    <HomeAbout />
     <HomeProjects :projects="projects" />
+    <HomeWhy :info="info" />
     <HomeCEO />
     <HomeStaff :staff="staff" />
     <HomeVacancies :vacansies="vacansies" />
     <!-- <HomeReviews :reviews="reviews" /> -->
+    <HomeOffer />
     <HomePartners />
     <!-- <HomePartnersVariant /> -->
     <DesktopFooter />

@@ -343,7 +343,7 @@ export default {
 <style scoped>
 @import url(@/assets/css/modal.css);
 .wrap {
-  padding: 240px 0 120px 0;
+  padding: 240px 0 80px 0;
 }
 .title {
   color: var(--grey-24, #c2c2c3);

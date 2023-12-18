@@ -332,8 +332,6 @@ export default {
   padding-bottom: 120px;
 }
 .title {
-  padding-top: 80px;
-  border-top: 1px solid #e2e2e2;
   margin-bottom: 40px;
   color: var(--Black, #292929);
   font-family: var(--bold);
