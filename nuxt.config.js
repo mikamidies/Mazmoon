@@ -44,13 +44,17 @@ export default {
     babel: {
       compact: true,
     },
-    // vendor: ["aos",
-    vendor: {
-      test: /[\\/]node_modules[\\/]/,
-      name: "vendor",
-      chunks: "all",
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: "vendor",
+            chunks: "all",
+          },
+        },
+      },
     },
-
     standalone: true,
     extend(config, ctx) {
       config.externals = [
