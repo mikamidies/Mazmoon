@@ -95,7 +95,7 @@ export default {
     const info = await infoApi.getInfo($axios);
     const translations = await translationsApi.getTranslations($axios);
 
-    await store.commit("getTranslations", translations.data);
+    await store.commit("getTranslations", translations?.data);
 
     return {
       projects,
