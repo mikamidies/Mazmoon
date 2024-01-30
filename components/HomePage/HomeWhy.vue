@@ -177,10 +177,11 @@
               {{ $store.state.translations["main.form-title"] }}
             </p>
             <div class="inputs">
-              <input v-model="full_name" required type="text"
-                :placeholder="$store.state.translations['main.your-name']" />
+              <input v-model="full_name" required type="text" :placeholder="$store.state.translations['main.your-name']"
+                minlength="3" />
               <input v-mask="'+998 (##) ###-##-##'" v-model="number" required type="text"
-                :placeholder="$store.state.translations['main.your-phone']" />
+                :placeholder="$store.state.translations['main.your-phone']" ref="maskedInput"
+                @input="checkMaskValidity" />
               <textarea v-model="message" :placeholder="$store.state.translations['main.your-comment']"></textarea>
             </div>
           </div>
@@ -245,6 +246,16 @@ export default {
   },
 
   methods: {
+    checkMaskValidity() {
+      const inputElement = this.$refs.maskedInput;
+
+      const inputValue = inputElement.value;
+
+      const isValid = inputValue.length >= 19;
+
+      inputElement.setCustomValidity(isValid ? '' : 'Заполните поле правильно.');
+    },
+
     async onSubmit() {
       const formData = {
         type: this.type,
