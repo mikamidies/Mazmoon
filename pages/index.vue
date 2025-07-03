@@ -6,8 +6,8 @@
     <HomeProjects :projects="projects" />
     <HomeWhy :info="info" />
     <HomeCEO />
-    <HomeStaff :staff="staff" />
-    <HomeVacancies :vacansies="vacansies" />
+    <!-- <HomeStaff :staff="staff" /> -->
+    <!-- <HomeVacancies :vacansies="vacansies" /> -->
     <!-- <HomeReviews :reviews="reviews" /> -->
     <HomeOffer />
     <HomePartners />

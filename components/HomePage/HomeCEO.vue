@@ -100,6 +100,7 @@ export default {
 <style scoped>
 .wrap {
   overflow: hidden;
+  margin-bottom: 80px;
 }
 .title {
   margin-bottom: 24px;
@@ -236,6 +237,9 @@ export default {
     bottom: 16px;
     left: 16px;
     padding: 8px 16px;
+  }
+  .wrap {
+    margin-bottom: 40px;
   }
 }
 </style>
