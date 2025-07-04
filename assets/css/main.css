@@ -1,21 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap");
 
-@font-face {
-  font-family: "Interfaces";
-  src: url(../fonts/TTINTERFACES-REGULAR.TTF);
-}
-@font-face {
-  font-family: "Interfaces-medium";
-  src: url(../fonts/TTINTERFACES-MEDIUM.TTF);
-}
-@font-face {
-  font-family: "Interfaces-bold";
-  src: url(../fonts/TTINTERFACES-EXTRABOLD.TTF);
-}
-@font-face {
-  font-family: "Interfaces-semi";
-  src: url(../fonts/TTINTERFACES-SEMIBOLD.TTF);
-}
 :root {
   --regular: "Golos Text", sans-serif;
   --medium: "Golos Text", sans-serif;
